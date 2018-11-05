@@ -1,11 +1,12 @@
 class DocsController < ApplicationController
-  before_action :find_doc , only: [:show, :edit, :update, :destroy]
+  before_action :find_doc, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! , only: [:new, :create]
 
   def index
-    @files = Doc.all.order("created_at DESC")
+    @docs = Doc.where(user_id: current_user)
   end
 
-  def edit
+  def show
   end
 
   def new
@@ -22,30 +23,32 @@ class DocsController < ApplicationController
     end
   end
 
-  def show
+
+  def edit
   end
 
+
   def update
-    if @doc.update(doc_params)
-      redirect_to @doc
-    else
-      render 'edit'
-    end
+      if @doc.update(doc_params)
+          redirect_to @doc
+      else
+          render 'edit'
+      end
   end
+
 
   def destroy
     @doc.destroy
     redirect_to docs_path
   end
 
-
   private
 
-  def find_doc
+   def find_doc
     @doc = Doc.find(params[:id])
-  end
+   end
 
-  def doc_params
-    params.require(:doc).permit(:title, :content)
-  end
+   def doc_params
+     params.require(:doc).permit(:title, :content)
+   end
 end

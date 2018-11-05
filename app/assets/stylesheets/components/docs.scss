@@ -1,12 +1,12 @@
 #docs {
   .doc {
-    background: #78594B;
-    width: 90%;
-    min-height: 100px;
-    margin: 1rem 1%;
-    padding: 1.5rem 2.5%;
+    background: #f0eff2;
+    width: 40%;
+    min-height: 193px;
+    margin: 2rem 3%;
+    padding: 1.5rem 23.5%;
     float: left;
-    border-radius: 2.9rem;
+    border-radius: 1rem;
     position: relative;
     text-align: center;
     .title {
@@ -19,11 +19,11 @@
     }
     .date {
       position: absolute;
-      bottom: .25rem;
-      left: 5.5%;
-      color: white;
-      font-weight: lighter;
-      font-size: .75rem;
+      bottom: -0.75rem;
+      right: 3.5%;
+      color: black;
+      font-weight: bold;
+      font-size: 0.95rem;
       text-align: center;
     }
     .content {

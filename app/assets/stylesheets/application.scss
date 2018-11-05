@@ -2,7 +2,8 @@
  *= require_self
  */
 
-@import 'normalize';
-@import "global";
-@import "docs";
-@import "welcome";
+@import "bootstrap";
+@import 'components/normalize';
+@import "components/global";
+@import "components/docs";
+@import "components/welcome";
